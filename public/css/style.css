@@ -1,0 +1,25 @@
+body { display: flex; min-height: 100vh; flex-direction: column; }
+main { flex: 1 0 auto; }
+
+.myt { color: #ff9800; font-size: 2.6rem; }
+.myb { background-color: rgba(255,255,255,0.8); }
+.myc { margin: 12px 0px; font-size: 0.8em; background-color: #eee; border-radius: 12px; padding: 10px 14px; border: 1px solid #bbb; white-space: pre-line; }
+
+.api h1  {  color: #ff9800; }
+.api h2, .api h3, .api h4, .api h5  {  color: #607d8b; }
+.apip { font-weight: 300; padding: 0px; margin: 0px; }
+
+.opt { padding-left: 20px; width: 50px; }
+
+.myta { border: 1px solid #ccc; padding: 4px; height: 70px; }
+
+.dropdown-content li>span { font-size: 14px; line-height: 18px; padding: 10 px 12; color: #ff9800; }
+
+.mybq { padding-left: 14px; border-left: 5px solid #607d8b; width: 60%; }
+
+.my_core { background-color: #ffd180; color: #f57c00; font-weight: bold; border: 1px solid white; }
+.my_act { background-color: #ffd180; border: 1px solid white; }
+.my_rel { background-color: #80cbc4; border: 1px solid white; }
+.my_tok { background-color: #e0e0e0; border: 1px solid white; }
+
+.ner {border-bottom: 2px solid orange; }

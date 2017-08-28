@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="[% settings.charset %]">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>[% l('title') %]</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    [% INCLUDE 'layouts/nav.tt' %]
+  </header>
+
+  <main>
+    <div class="container" style="margin-top: 40px;">
+      [% content %]
+    </div>
+  </main>
+
+  [% INCLUDE 'layouts/footer.tt' %]
+
+  <script src="/javascripts/jquery-2.1.1.min.js"></script>
+  <script src="/javascripts/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".dropdown-button").dropdown();
+    [% IF online %]
+      $('select').material_select();
+    [% END %]
+    [% IF api %]
+      //$('.collapsible').collapsible();
+      if(window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        $('#'+hash).trigger('click');
+        //$('#'+hash)[0].scrollTop();
+        $('html,body').animate({scrollTop: $('#'+hash).offset().top});
+
+      }
+    [% END %]
+    });
+  </script>
+</body>
+</html>

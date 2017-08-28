@@ -1,0 +1,32 @@
+<p class="light" style="padding: 0px; margin: 0px;">
+Given a text compute the frequency of terms.
+</p>
+<h5>Requests</h5>
+<pre>POST http://api.pln.pt/tf</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+Send the text to be tokenized as the body of the request.
+</p>
+<h5>Result</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+The result is an object in JSON format where the key is the term, and the value is the corresponding term frequency.
+</p>
+<h5>Example</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+For example, given the following input text:
+</p>
+<pre class="myc">$ cat input.txt
+A Maria tem razão.</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+You can make a request to the API for tokenizing the text, for example:
+</p>
+<pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tf
+{"Maria":1,"A":1,"tem":1,"razão":1}</pre>
+<h5>Options</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>ner=&lt;1|0&gt;</code><br>
+pre-process text for named entities recognition (default: <code>1</code>).<br>
+<code>stopwords=&lt;1|0&gt;</code><br>
+filter out stopwords from final result (default: <code>0</code>).<br>
+<code>term=&lt;form|lemma&gt;</code><br>
+use the form or lemma of each token as term (default: <code>form</code>).<br>
+</p>

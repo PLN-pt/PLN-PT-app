@@ -1,0 +1,69 @@
+<h1 class="myt">[% l('online-title') %]</h1>
+<form method="post">
+  <div class="row">
+    <div class="col s9">
+      <textarea id="text" class="myta" name="text" style="height: 108px;" placeholder="[% l('online-input') %]">[% text %]</textarea>
+    </div>
+    <div class="col s3">
+      <select name="process" class="" style="width: 100px;">
+        <option value="" disabled[% UNLESS myproc %] selected[% END %]>[% l('online-process-with') %]:</option>
+        <option value="tokenizer"[% IF myproc == 'tokenizer' %] selected[% END %]>Tokenizer</option>
+        <option value="tagger"[% IF myproc == 'tagger' %] selected[% END %]>POS Tagger</option>
+        <option value="dep_parser"[% IF myproc == 'dep_parser' %] selected[% END %]>Dep. Parser</option>
+        <li class="divider"></li>
+        <option value="actants"[% IF myproc == 'actants' %] selected[% END %]>Actants</option>
+      </select>
+      <button class="btn waves-effect waves-light orange" style="width: 100%;" type="submit" name="action">[% l('online-process') %] <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+</form>
+
+[% IF myproc == 'dep_parser' %]
+  <div class="row">
+    <div class="col s12">
+      <h5>Dependency Tree</h5>
+      <!-- <div style="text-align: center;"><img src="[% parse_tree %]"></div> -->
+      <pre class="myc" style="white-space: pre;">[% ascii_tree %]</pre>
+    </div>
+  </div>
+[% END %]
+[% IF myproc == 'actants' %]
+  <div class="row">
+    <div class="col s12">
+      <h5>Actants</h5>
+      [% FOREACH i IN actants.actants %]
+        <table class="centered" style="width: 70%; margin: auto;">
+          <tr><td style="text-align: right; color: #ff9800; padding: 4px;">Verb</td>
+              <td style="text-align: left; padding: 4px; font-style: italic;">[% i.verb.form %]</td></tr>
+          [% FOREACH j IN i.acts %]
+            <tr><td style="text-align: right; color: #ff9800; padding: 4px;">A[%- loop.count -%]</td>
+                <td style="text-align: left; padding: 4px; font-style: italic;">[% PROCESS _acts l = j.tokens %]</td></tr>
+          [% END %]
+        </table>
+      [% END %]
+    </div>
+  </div>
+[% END %]
+[% IF json %]
+  <div class="row">
+    <div class="col m12">
+      <h5>JSON</h5>
+      <pre class="myc">[% json %]</pre>
+    </div>
+  </div>
+[% END %]
+[% IF raw %]
+  <div class="row">
+    <div class="col m12">
+      <h5>Raw</h5>
+      <pre class="myc">[% raw %]</pre>
+    </div>
+  </div>
+[% END %]
+
+[% BLOCK _acts %]
+  [% FOREACH i IN l %]
+    [% i.form %]
+  [% END %]
+[% END %]

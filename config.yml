@@ -1,0 +1,18 @@
+appname: "PLN::PT::app"
+behind_proxy: 1
+layout: "main"
+charset: "UTF-8"
+template: "template_toolkit"
+engines:
+  template:
+    template_toolkit:
+      start_tag: '[%'
+      end_tag:   '%]'
+plugins:
+  Locale::Wolowitz:
+    fallback: 'pt'
+    locale_path_directory: 'locale/main.coll.json'
+    lang_session: 'lang'
+    lang_available:
+      - pt
+      - en

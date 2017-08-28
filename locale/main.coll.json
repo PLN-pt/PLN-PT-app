@@ -1,0 +1,110 @@
+{
+  "title": {
+	"pt": "Processamento de Linguagem Natural para Português",
+	"en": "Natural Language Processing for Portuguese"
+  },
+  "index-title": {
+	"pt": "Processamento de Linguagem Natural para Português",
+	"en": "Natural Language Processing for Portuguese"
+  },
+  "index-left-subtitle": {
+	"pt": "Recursos",
+	"en": "Resources"
+  },
+  "index-mid-subtitle": {
+	"pt": "Serviços",
+	"en": "Services"
+  },
+  "index-right-subtitle": {
+	"pt": "Online",
+	"en": "Online"
+  },
+  "index-left-text": {
+	"pt": "Lista de bibliotecas, ferramentas, e outros recursos relactionados com PLN, e a língua Portuguesa (em inglês apenas).",
+	"en": "Resources for NLP that include support for the Portuguese language. Set of libraries and tools for different languages and frameworks."
+  },
+  "index-mid-text": {
+	"pt": "Serviços web, que disponiblizam uma série de operações comuns usadas em PLN, através de uma API pública.",
+	"en": "We also provide web services (via an API) that implement common algorithmos and techniques that can be used to develop applications."
+  },
+  "index-right-text": {
+	"pt": "Aplicação online para testes e experiências com os serviços disponiblizados pela API, directamente a partir do browser.",
+	"en": "An online application for testing and quick insigiht on the API features is also available. Blah blh blahb lahb alha blah blah blah."
+  },
+  "index-left-link": {
+	"pt": "Catálogo",
+	"en": "Catalog"
+  },
+  "index-mid-link": {
+	"pt": "API",
+	"en": "API"
+  },
+  "index-right-link": {
+	"pt": "App",
+	"en": "App"
+  },
+  "api-title": {
+	"pt": "Serviços Web - API",
+	"en": "Web Services - API"
+  },
+  "api-stable": {
+	"pt": "Estável",
+	"en": "Stable"
+  },
+  "api-testing": {
+	"pt": "Em Testes",
+	"en": "Testing"
+  },
+  "api-experimental": {
+	"pt": "Em Desenvolvimento",
+	"en": "Experimental"
+  },
+  "api-tokenizer": {
+	"pt": "<em>Tokenizer</em>",
+	"en": "Tokenizer"
+  },
+  "api-tagger": {
+	"pt": "Etiquetador Morfosintático",
+	"en": "Part-of-Speech Tagger"
+  },
+  "api-word-analysis": {
+	"pt": "Análise de Palavras",
+	"en": "Word Analysis"
+  },
+  "api-dep-parser": {
+	"pt": "<em>Parser</em> de Dependências",
+	"en": "Dependecny Parser"
+  },
+  "api-tf": {
+	"pt": "Frequência de Termos",
+	"en": "Term Frequency"
+  },
+  "api-stopwords": {
+	"pt": "<em>Stop Words</em>",
+	"en": "Stop Words"
+  },
+  "api-actants": {
+	"pt": "Actantes de Verbos",
+	"en": "Verbs Actants"
+  },
+  "online-title": {
+	"pt": "Aplicação Online",
+	"en": "Online Application"
+  },
+  "online-input": {
+	"pt": "Texto de entrada.",
+	"en": "Input text."
+  },
+  "online-process": {
+	"pt": "Processar",
+	"en": "Process"
+  },
+  "online-process-with": {
+	"pt": "Processar com",
+	"en": "Process with:"
+  },
+  "copyright": {
+    "en": "All rights reserved.",
+    "pt": "Todos os direitos reservados."
+  }
+}

@@ -1,0 +1,27 @@
+[% IF session.lang == 'en' %]
+  <div class="myb">
+    <div class="container" style="padding: 40px 80px;">
+      <h4 class="myt">Getting Started</h4>
+      <p class="light">This is a text about getting started. If you're looking for a framwork to use blabh blah. Other you can use the API to make requests to operations. For example, given the following input text:</p>
+      <pre class="myc">$ cat input.txt 
+This is a sample input text.</pre>
+       <p class="light">You can make a request to the API for tokenizing the text. The response is a JSON object</p>
+       <pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tokenizer
+["This","is","a","sample","input","text","."]</pre>
+       <p class="light">For more blah blah, and visit the API documentation.</p>
+    </div>
+  </div>
+[% ELSE %]
+  <div class="myb">
+    <div class="container" style="padding: 40px 80px;">
+      <h4 class="myt">Como Começar</h4>
+      <p class="light">Para começar a usar os nossos serviços web basta fazer pedidos para o endereço da nossa API. Por exemplo, dado o seguinte texto de entrada:</p>
+      <pre class="myc">$ cat input.txt 
+This is a sample input text.</pre>
+       <p class="light">E possível fazer um pedido à API para proceder à divisão do texto em <em>tokens</em>. A resposta é um objecto JSON.</p>
+       <pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tokenizer
+["This","is","a","sample","input","text","."]</pre>
+       <p class="light">Para uma lista completa das operações disponíveis na API consulte a documentação.</p>
+    </div>
+  </div>
+[% END %]
