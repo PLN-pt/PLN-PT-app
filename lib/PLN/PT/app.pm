@@ -31,9 +31,6 @@ get '/' => sub {
   template 'index' => { index=>1 };
 };
 
-get '/resources2' => sub {
-  template 'resources2';
-};
 get '/resources' => sub {
   template 'resources';
 };
