@@ -26,3 +26,11 @@ You can make a request to the API for tokenizing the text, for example:
      <code class="opt">json</code> (default) return the output as a JSON object<br>
      <code class="opt">raw</code> return the raw output from the toknizer instead of returning a json object
 </p>
+<p class="light" style="padding: 0px; margin: 0px;">
+    <code>sense=&lt;value&gt;</code><br>
+    <code class="opt">no|none</code> (default) no semantic annotation<br>
+    <code class="opt">ukb</code> uses <a href="http://ixa2.si.ehu.es/ukb/">UKB</a> disambiguation approach<br>
+    <code class="opt">mfs</code> uses Most Frequent Sense<br>
+    <code class="opt">all</code> outputs all senses
+</p>
+
