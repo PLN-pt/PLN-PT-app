@@ -11,8 +11,16 @@ use utf8::all;
 use Encode;
 use Tree::Simple;
 use Tree::Simple::View::ASCII;
+use Text::Markdown;
 
 our $VERSION = '0.1';
+
+# recompile templates based on data files
+for my $t (qw/resources/) {
+  print STDERR "Building: ${t}_data.tt ..";
+  _md2tt($t);
+  print STDERR "done!\n";
+}
 
 hook 'before' => sub {
   my $l = session 'lang';
@@ -135,6 +143,16 @@ sub _tree_add_child {
   }
 
   return $tree;
+}
+
+sub _md2tt {
+  my ($t) = @_;
+
+  my $md = path("data/$t.md")->slurp;
+  my $html = Text::Markdown::markdown($md);
+  $html =~ s/<ul>/<ul class="collection">/g;
+  $html =~ s/<li>/<li class="collection-item">/g;
+  path("views/${t}_data.tt")->spew($html);
 }
 
 true;

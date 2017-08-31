@@ -23,3 +23,5 @@ main { flex: 1 0 auto; }
 .my_tok { background-color: #e0e0e0; border: 1px solid white; }
 
 .ner {border-bottom: 2px solid orange; }
+
+#resources_data > h2 { color: #ff9800; font-size: 1.56rem; }

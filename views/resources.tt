@@ -1,58 +1,6 @@
 <h1 class='myt'>Resources</h1>
-<ul class="collection with-header">
-  <li class="collection-header blue-grey white-text"><h5>Generic Software Suites</h5></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://nlp.lsi.upc.edu/freeling' class='orange-text'>FreeLing</a></h6><span>
-<p class='light'>An open source language analysis tool suite, providing language analysis functionalities (morphological analysis, named entity detection, PoS-tagging, parsing, Word Sense Disambiguation, Semantic Role Labeling, etc.) for a variety of languages (English, Spanish, Portuguese, Italian, French, German, Russian, Catalan, Galician, Croatian, Slovene, among others).</p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://www.nltk.org/' class='orange-text'>Natural Language Toolkit</a></h6><span>
-<p class='light'>Platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning, wrappers for industrial-strength NLP libraries.</p></li>
-</ul>
-<ul class="collection with-header">
-  <li class="collection-header blue-grey white-text"><h5>Morphological Analyzer</h5></li>
-<p class='light'></p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='https://metacpan.org/release/Lingua-Jspell' class='orange-text'>Lingua::Jspell</a></h6><span>
-<p class='light'>An open source morphological analyzer based on the well known ispell orthographic corrector. It includes dictionaries for Portuguese, English and Latin.</p></li>
-</ul>
-<ul class="collection with-header">
-  <li class="collection-header blue-grey white-text"><h5>POS Taggers</h5></li>
-<p class='light'></p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/' class='orange-text'>TreeTagger</a></h6><span>
-<p class='light'>Closed source but free to use Part-Of-Speech tagger. Includes models for a variety of languages including English, German, Portuguese, Russian and others.</p></li>
-</ul>
-<ul class="collection with-header">
-  <li class="collection-header blue-grey white-text"><h5>Corpora</h5></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://per-fide.di.uminho.pt/site.pl/resources.en' class='orange-text'>Per-Fide Project</a></h6><span>
-<p class='light'>Provides a set of parallel corpora, of different domains, in several languages (including Portuguese).</p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://universaldependencies.org/' class='orange-text'>Universal Dependencies</a></h6><span>
-<p class='light'>Provides a set of annotated treebanks for different languages, including Portuguese.</p></li>
-</ul>
-<ul class="collection with-header">
-  <li class="collection-header blue-grey white-text"><h5>Perl Modules</h5></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://search.cpan.org/dist/Lingua-FreeLing3/' class='orange-text'>Lingua-FreeLing3</a></h6><span>
-<p class='light'>A library for language analysis with FreeLing3.</p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='http://search.cpan.org/dist/Lingua-FreeLing3-Utils/' class='orange-text'>Lingua-FreeLing3-Utils</a></h6><span>
-<p class='light'>Text processing utilities using FreeLing3 Perl interface.</p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='https://metacpan.org/release/Lingua-TreeTagger-Installer' class='orange-text'>Lingua-TreeTagger-Installer</a></h6><span>
-<p class='light'>A module to help installing TreeTagger binary and managing dictionaries.</p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='https://metacpan.org/release/Lingua-TreeTagger' class='orange-text'>Lingua-TreeTagger</a></h6><span>
-<p class='light'>A module to use TreeTagger from within Perl.</p></li>
-</ul>
-<ul class="collection with-header">
-  <li class="collection-header blue-grey white-text"><h5>Dictionaries</h5></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='https://addons.mozilla.org/en-US/firefox/addon/european-portuguese-spellcheck/' class='orange-text'>European Portuguese Spellchecker</a></h6><span>
-<p class='light'>European Portuguese (pt-PT) Dictionary add-on for Mozilla Firefox.</p></li>
-<li class='collection-item'>
-<span class='title'><h6><a href='https://addons.mozilla.org/en-US/thunderbird/addon/european-portuguese-spellcheck/' class='orange-text'>European Portuguese Spellchecker</a></h6><span>
-<p class='light'>European Portuguese (pt-PT) Dictionary add-on for Mozilla Thunderbird.</p></li>
-</ul>
-<br><p class='light mybq'>This list is generated from the <a href='https://github.com/nunorc/nlp-pt-resources' class='orange-text'>nlp-pt-resources</a> repository, for updates or adding items please open a issue or submit a pull request.</p>
+
+<div id="resources_data">
+  [% INCLUDE 'resources_data.tt' %]
+</div>
+
