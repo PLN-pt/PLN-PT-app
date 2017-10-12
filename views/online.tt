@@ -11,7 +11,7 @@
         <option value="tagger"[% IF myproc == 'tagger' %] selected[% END %]>POS Tagger</option>
         <option value="dep_parser"[% IF myproc == 'dep_parser' %] selected[% END %]>Dep. Parser</option>
         <li class="divider"></li>
-        <option value="actants"[% IF myproc == 'actants' %] selected[% END %]>Actants</option>
+        <!-- <option value="actants"[% IF myproc == 'actants' %] selected[% END %]>Actants</option> -->
       </select>
       <button class="btn waves-effect waves-light orange" style="width: 100%;" type="submit" name="action">[% l('online-process') %] <i class="material-icons right">send</i>
       </button>

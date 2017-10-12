@@ -12,6 +12,9 @@ use Encode;
 use Tree::Simple;
 use Tree::Simple::View::ASCII;
 use Text::Markdown;
+use HTTP::Request;
+use LWP::UserAgent;
+use utf8::all;
 
 our $VERSION = '0.1';
 
@@ -56,28 +59,21 @@ post '/online' => sub {
   redirect '/online' unless $text;
 
   my $process = param 'process';
-  my ($json, $raw);
 
-  my $opts = { output => 'rawjson' };
+  my $opts = { };
 
+  my ($data, $json, $raw);
   if ($process) {
     my $url = "http://api.pln.pt/$process";
 
-    my $output = _do_post($url, $text, $opts);
-    my $data = JSON::XS->new->decode($output);
-
-    $raw = $data->{raw};
-    $json = JSON::XS->new->encode($data->{json});
+    $json = _do_post($url, $text, $opts);
+    $data = JSON::XS->new->decode($json);
+    $raw = _json2raw($data);
   }
 
   my ($parse_tree, $ascii_tree);
   if (lc($process) eq 'dep_parser') {
-    $ascii_tree = _build_ascii_tree(JSON::XS->new->decode($json));
-  }
-
-  my $actants;
-  if (lc($process) eq 'actants') {
-    $actants = JSON::XS->new->decode($json);
+    $ascii_tree = _build_ascii_tree($data);
   }
 
   template 'online' => {
@@ -88,7 +84,6 @@ post '/online' => sub {
       myproc => $process,
       parse_tree => $parse_tree,
       ascii_tree => $ascii_tree,
-      actants => $actants
     };
 };
 
@@ -102,12 +97,39 @@ sub _do_post {
   }
   $url = $url . "?" . join('&', @opts);
 
-  my $i = File::Temp->new;
-  my $input = $i->filename;
-  path($input)->spew_utf8($text);
-  my $r = `curl -s -X POST -d \@$input $url`;
+  my $req = HTTP::Request->new(POST => $url);
+  my $ua = LWP::UserAgent->new;
+  $req->content(Encode::encode_utf8($text));
 
-  return $r;
+  my $json;
+  my $res = $ua->request($req);
+  if ($res->is_success) {
+    $json = $res->decoded_content;
+    $json = $res->content unless $json;
+  }
+  else {
+    print STDERR "HTTP POST error: ", $res->code, " - ", $res->message, "\n";
+    return undef;
+  }
+
+  if ($url =~ m/dep_parser.*?$/) {
+    return $json;
+  }
+  else {
+    return Encode::decode_utf8($json);
+  }
+}
+
+sub _json2raw {
+  my ($json) = @_;
+
+  my @l;
+  for (@$json) {
+    if (ref($_) eq 'ARRAY') { push @l, join("\t", @$_); }
+    else { push @l, $_; }
+  }
+
+  return join("\n", @l);
 }
 
 sub _build_ascii_tree {
