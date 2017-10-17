@@ -68,7 +68,7 @@ post '/online' => sub {
 
     $json = _do_post($url, $text, $opts);
     $data = JSON::XS->new->decode($json);
-    $raw = _json2raw($data);
+    $raw = _json2raw($process, $data);
   }
 
   my ($parse_tree, $ascii_tree);
@@ -121,12 +121,16 @@ sub _do_post {
 }
 
 sub _json2raw {
-  my ($json) = @_;
+  my ($process, $json) = @_;
 
   my @l;
-  for (@$json) {
-    if (ref($_) eq 'ARRAY') { push @l, join("\t", @$_); }
-    else { push @l, $_; }
+  if ($process eq 'tokenizer') {
+    @l = @$json;
+  }
+  if ($process eq 'tagger') {
+    for (@$json) {
+      push @l, join("\t", $_->{form}, $_->{lemma}, $_->{pos}, $_->{prob});
+    }
   }
 
   return join("\n", @l);
@@ -137,7 +141,7 @@ sub _build_ascii_tree {
   my $tree;
 
   for (@$data) {
-    if ($_->[7] eq 'ROOT') {
+    if ($_->{deprel} eq 'ROOT') {
       $tree = Tree::Simple->new(_tree_build_str($_), Tree::Simple->ROOT);
       _tree_add_child($_, $tree, $data);
     }
@@ -150,7 +154,7 @@ sub _build_ascii_tree {
 
 sub _tree_build_str {
   my ($token) = @_;
-  my $str = join(' ', $token->[1], $token->[3], $token->[7]);
+  my $str = join(' ', $token->{form}, $token->{upostag}, $token->{deprel});
   return $str;
 }
 
@@ -158,7 +162,7 @@ sub _tree_add_child {
   my ($token, $tree, $data) = @_;
 
   for (@$data) {
-    if ($_->[6] eq $token->[0]) {
+    if ($_->{head} eq $token->{id}) {
       my $t = Tree::Simple->new(_tree_build_str($_), $tree);
       _tree_add_child($_, $t, $data);
     }
