@@ -1,0 +1,36 @@
+<p class="light" style="padding: 0px; margin: 0px;">
+O processo de identificar a etiqueta morfossintática de cada palavra no texto, com base na análise léxica e no contexto.</p>
+<h5>[% l('requests') %]</h5>
+<pre>POST http://api.pln.pt/tagger</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+Enviar o texto a ser processado como corpo do pedido.
+</p>
+<h5>[% l('result') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+O resutado da operação é uma lista, em formato JSON, em que para cada palavra do texto é indenticada a etiqueta de PoS com a respectiva probabilidade.
+</p>
+<h5>[% l('example') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+Por exemplo, dado o seguinte texto:
+</p>
+<pre class="myc">$ cat input.txt
+A Maria tem razão.</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+É possível fazer um pedido à API para etiquetar o texto, por exemplo:
+</p>
+<pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tagger
+[["A","o","DA0FS0","0.675415"],["Maria","maria","NP00000","1"],["tem","ter","VMIP3S0","0.999287"],["razão","razão","NCFS000","0.65"],[".",".","Fp","1"]]</pre>
+<h5>[% l('options') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>output=json|raw</code><br>
+     <code class="opt">json</code> (por omissão) devolev o resultado num objecto JSON<br>
+     <code class="opt">raw</code> devolve o resultado não processado em texto limpo
+</p>
+<p class="light" style="padding: 0px; margin: 0px;">
+    <code>sense=&lt;value&gt;</code><br>
+    <code class="opt">no|none</code> (default) sem anotação semântica<br>
+    <code class="opt">ukb</code> usar <a href="http://ixa2.si.ehu.es/ukb/">UKB</a> para desambiguação approach<br>
+    <code class="opt">mfs</code> usar <em>Most Frequent Sense</em><br>
+    <code class="opt">all</code> devolve todos os sentidos
+</p>
+

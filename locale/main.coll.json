@@ -73,7 +73,7 @@
   },
   "api-dep-parser": {
 	"pt": "<em>Parser</em> de Dependências",
-	"en": "Dependecny Parser"
+	"en": "Dependency Parser"
   },
   "api-tf": {
 	"pt": "Frequência de Termos",
@@ -106,5 +106,21 @@
   "copyright": {
     "en": "All rights reserved.",
     "pt": "Todos os direitos reservados."
+  },
+  "requests": {
+    "en": "Requests",
+    "pt": "Pedidos"
+  },
+  "result": {
+    "en": "Result",
+    "pt": "Resultado"
+  },
+  "example": {
+    "en": "Example",
+    "pt": "Exemplo"
+  },
+  "options": {
+    "en": "Options",
+    "pt": "Opções"
   }
 }

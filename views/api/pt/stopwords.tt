@@ -1,0 +1,20 @@
+<p class="light" style="padding: 0px; margin: 0px;">
+Obter uma lista de <em>stopwords</em>, palavras que não costumam transportar significado semântico relevante.
+</p>
+<h5>[% l('requests') %]</h5>
+<pre>GET http://api.pln.pt/stopwords</pre>
+<h5>[% l('result') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+O resultado é uma lista, em formato JSON, de palavras.
+</p>
+<h5>[% l('example') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+É posssível fazer um pedido à API para obter uma lista de <em>stopwords</em>, por exemplo:
+</p>
+<pre class="myc"> $ curl http://api.pln.pt/stopwords
+["essas","num","estivéramos","do","estivermos","nossa","muito", ...]</pre>
+<h5>[% l('options') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>lang=pt</code><br>
+língua (<code>pt</code> por omissão).<br>
+</p>

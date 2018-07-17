@@ -1,29 +1,28 @@
 <p class="light" style="padding: 0px; margin: 0px;">
-Dependecy parser ...... </p>
-<h5>Requests</h5>
+Compute dependency tree for a sentence using <a href="https://github.com/tensorflow/models/tree/master/research/syntaxnet">SyntaxNet</a>.</p>
+<h5>[% l('requests') %]</h5>
 <pre>POST http://api.pln.pt/dep_parser</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
-Send the text to be parser as the body of the request, one complete sentence
-per line.
+Send the sentence to be parsed as the body of the request. For multiple sentences send one complete sentence per line.
 </p>
-<h5>Result</h5>
+<h5>[% l('result') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-The result operation is a list in JSON format where each element of the list is a list of ....</p>
-<h5>Example</h5>
+The result is a list, in JSON format, where each element of the list is a object describing features for each token including dependency relations information, described in <a href="http://universaldependencies.org/}">Universal Dependencies</a>.</p>
+<h5>[% l('example') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-For example, given the following input text:
+Given the following input text:
 </p>
 <pre class="myc">$ cat input.txt 
 A Maria tem razão.
 O João foi ao rio.</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
-You can make a request to the API for tokenizing the text, for example:
+You can make a request to the API for parsing the text, for example:
 </p>
 <pre class="myc">$ curl -s -X POST --data-binary @input.txt http://api.pln.pt/dep_parser
 [[["1","A","_","DET","art|<artd>|F|S","Definite=Def|Gender=Fem|Number=Sing|PronType=Art|fPOS=DET++art|<artd>|F|S","2","det","_","_"],["2","Maria","_","PROPN","prop|F|S","Gender=Fem|Number=Sing|fPOS=PROPN++prop|F|S","3","nsubj","_","_"],["3","tem","_","VERB","v-fin|PR|3S|IND","Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|fPOS=VERB++v-fin|PR|3S|IND","0","ROOT","_","_"],["4","razão.","_","NOUN","n|F|S","Gender=Fem|Number=Sing|fPOS=NOUN++n|F|S","3","dobj","_","_"]],[["1","O","_","DET","art|<artd>|M|S","Definite=Def|Gender=Masc|Number=Sing|PronType=Art|fPOS=DET++art|<artd>|M|S","2","det","_","_"],["2","João","_","PROPN","prop|M|S","Gender=Masc|Number=Sing|fPOS=PROPN++prop|M|S","3","nsubj","_","_"],["3","foi","_","VERB","v-fin|PS|3S|IND","Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|fPOS=VERB++v-fin|PS|3S|IND","0","ROOT","_","_"],["4","ao","_","ADP","adv","AdpType=Preppron|Definite=Def|Gender=Masc|Number=Sing|fPOS=ADP++adv","3","advmod","_","_"],["5","rio.","_","NOUN","NOUN","fPOS=NOUN++NOUN","4","mwe","_","_"]]]</pre>
-<h5>Options</h5>
+<h5>[% l('options') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-<code>output=&lt;value&gt;</code><br>
-     <code class="opt">json</code> (default) return the output as a JSON object<br>
-     <code class="opt">raw</code> return the raw output from the toknizer instead of returning a json object
+<code>output=json|raw</code><br>
+  <code class="opt">json</code> (default) return the output as a JSON object<br>
+  <code class="opt">raw</code> return the raw output of the parser as plain text
 </p>

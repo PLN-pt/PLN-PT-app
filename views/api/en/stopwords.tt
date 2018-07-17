@@ -1,22 +1,20 @@
 <p class="light" style="padding: 0px; margin: 0px;">
-Retrieve a list of stop words, words which that do not convey importante
-significance.
+Retrieve a list of stop words, words that do not convey important significance.
 </p>
-<h5>Requests</h5>
+<h5>[% l('requests') %]</h5>
 <pre>GET http://api.pln.pt/stopwords</pre>
-<h5>Result</h5>
+<h5>[% l('result') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-The result is an list in JSON format of stop words.
+The result is an list, in JSON format, of stop words.
 </p>
-<h5>Example</h5>
+<h5>[% l('example') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-You can make a request to the API to retrieve a list of stop words,
-for example:
+You can make a request to the API to retrieve a list of stop words, for example:
 </p>
 <pre class="myc"> $ curl http://api.pln.pt/stopwords
 ["essas","num","estivéramos","do","estivermos","nossa","muito", ...]</pre>
-<h5>Options</h5>
+<h5>[% l('options') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-<code>lang=&lt;pt&gt;</code><br>
+<code>lang=pt</code><br>
 language (default: <code>pt</code>).<br>
 </p>

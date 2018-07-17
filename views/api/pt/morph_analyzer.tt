@@ -1,0 +1,29 @@
+<p class="light" style="padding: 0px; margin: 0px;">
+Analisador morfo-sintático para uma palavra.
+</p>
+<h5>[% l('requests') %]</h5>
+<pre>GET http://api.pln.pt/morph_analyzer/:word</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+Onde <code>:word</code> é a palavra a ser analisada.
+</p>
+<h5>[% l('result') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+O resultado é uma lista, em formato JSON, em que cada elemento da lista é um objecto que representa cada sentido.
+</p>
+<h5>[% l('example') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+É possível fazer um pedido à API para analisar uma palavra apenas, por examplo para a palavra <code>gato</code>:
+</p>
+<pre class="myc">$ curl -s http://api.pln.pt/morph_analyzer/gato
+[{"lemma":"gato","prob":"0.914009","pos":"NCMS000"},{"lemma":"gatar","pos":"VMIP1S0","prob":"0.0859907"}]</pre>
+<h5>[% l('options') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>output=json|raw</code><br>
+  <code class="opt">json</code> (default) devolve o resultado num objecto JSON<br>
+  <code class="opt">raw</code> devolve o resultado não processado em texto limpo
+</p>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>backend=fl4|jspell</code><br>
+  <code class="opt">fl4</code> (default) usa a ferramenta FreeLing<br>
+  <code class="opt">jspell</code> usa a ferramenta jSpell
+</p>

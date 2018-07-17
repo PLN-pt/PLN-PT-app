@@ -1,27 +1,27 @@
 <p class="light" style="padding: 0px; margin: 0px;">
 Given a text compute the frequency of terms.
 </p>
-<h5>Requests</h5>
+<h5>[% l('requests') %]</h5>
 <pre>POST http://api.pln.pt/tf</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
-Send the text to be tokenized as the body of the request.
+Send the text to be processed as the body of the request.
 </p>
-<h5>Result</h5>
+<h5>[% l('result') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-The result is an object in JSON format where the key is the term, and the value is the corresponding term frequency.
+The result is an object, in JSON format, where the key is the term, and the value is the corresponding term frequency.
 </p>
-<h5>Example</h5>
+<h5>[% l('example') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-For example, given the following input text:
+Given the following input text:
 </p>
 <pre class="myc">$ cat input.txt
 A Maria tem razão.</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
-You can make a request to the API for tokenizing the text, for example:
+You can make a request to the API for processing the text, for example:
 </p>
 <pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tf
 {"Maria":1,"A":1,"tem":1,"razão":1}</pre>
-<h5>Options</h5>
+<h5>[% l('options') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
 <code>ner=&lt;1|0&gt;</code><br>
 pre-process text for named entities recognition (default: <code>1</code>).<br>

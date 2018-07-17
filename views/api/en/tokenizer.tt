@@ -1,16 +1,16 @@
 <p class="light" style="padding: 0px; margin: 0px;">
 In lexical analysis, tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.
 </p>
-<h5>Requests</h5>
+<h5>[% l('requests') %]</h5>
 <pre>POST http://api.pln.pt/tokenizer</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
 Send the text to be tokenized as the body of the request.
 </p>
-<h5>Result</h5>
+<h5>[% l('result') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
 The result operation is a list in JSON format where each element of the list is a token.
 </p>
-<h5>Example</h5>
+<h5>[% l('example') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
 For example, given the following input text:
 </p>
@@ -21,9 +21,13 @@ You can make a request to the API for tokenizing the text, for example:
 </p>
 <pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tokenizer
 ["A","Maria","tem","razão","."]</pre>
-<h5>Options</h5>
+<h5>[% l('options') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-<code>output=&lt;value&gt;</code><br>
-     <code class="opt">json</code> (default) return the output as a JSON object<br>
-     <code class="opt">raw</code> return the raw output from the toknizer instead of returning a json object
+<code>output=json|raw</code><br>
+  <code class="opt">json</code> (default) return the output as a JSON object<br>
+  <code class="opt">raw</code> return the raw output from the toknizer instead of returning a json object
+</p>
+<code>sentence=0|1</code><br>
+  <code class="opt">1</code> tokenize by sentence<br>
+  <code class="opt">0</code> don't tokenize by sentence (default)
 </p>

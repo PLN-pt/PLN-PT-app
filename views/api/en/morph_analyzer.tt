@@ -1,0 +1,29 @@
+<p class="light" style="padding: 0px; margin: 0px;">
+Morphological analysis of a word.
+</p>
+<h5>[% l('requests') %]</h5>
+<pre>GET http://api.pln.pt/morph_analyzer/:word</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+Where <code>:word</code> is the word being analyzed.
+</p>
+<h5>[% l('result') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+The result is a list, in JSON format, where each element of the list is an object representing each sense.
+</p>
+<h5>[% l('example') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+You can make a request to the API for analyzing a single word, for example for the word <code>gato</code>:
+</p>
+<pre class="myc">$ curl -s http://api.pln.pt/morph_analyzer/gato
+[{"lemma":"gato","prob":"0.914009","pos":"NCMS000"},{"lemma":"gatar","pos":"VMIP1S0","prob":"0.0859907"}]</pre>
+<h5>[% l('options') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>output=json|raw</code><br>
+  <code class="opt">json</code> (default) return the output as a JSON object<br>
+  <code class="opt">raw</code> return the raw output as plain text
+</p>
+<p class="light" style="padding: 0px; margin: 0px;">
+<code>backend=fl4|jspell</code><br>
+  <code class="opt">fl4</code> (default) use FreeLing as backend tool<br>
+  <code class="opt">jspell</code> use jSpell as backend tool
+</p>

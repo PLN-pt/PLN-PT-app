@@ -1,3 +1,5 @@
+[% SET api_dir = 'api/' _ session.lang %]
+
 <h1 class="myt">[% l('api-title') %]</h1>
 
 <h5 style="color: #607d8b;">[% l('api-stable') %]</h5>
@@ -5,13 +7,13 @@
   <li>
     <div id="tokenizer" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-tokenizer') %]<span class="right">POST <code>/tokenizer</code></span></div>
     <div class="api collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/tokenizer.tt' %]
+      [% INCLUDE "$api_dir/tokenizer.tt" %]
     </div>
   </li>
   <li>
     <div id="tagger" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-tagger') %]<span class="right">POST <code>/tagger</code></span></div>
 	<div class="collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/tagger.tt' %]
+      [% INCLUDE "$api_dir/tagger.tt" %]
     </div>
   </li>
 </ul>
@@ -19,49 +21,33 @@
 <h5 style="color: #607d8b; padding-top: 10px;">[% l('api-testing') %]</h5>
 <ul class="collapsible" data-collapsible="accordion">
   <li>
-    <div id="word_analysis" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-word-analysis') %]<span class="right">POST <code>/word_analysis</code></span></div>
+    <div id="word_analysis" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-word-analysis') %]<span class="right">GET <code>/morph_analyzer/:word</code></span></div>
 	<div class="collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/word_analysis.tt' %]
+      [% INCLUDE "$api_dir/morph_analyzer.tt" %]
     </div>
   </li>
   <li>
     <div id="dep_parser" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-dep-parser') %]<span class="right">POST <code>/dep_parser</code></span></div>
 	<div class="collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/dep_parser.tt' %]
+      [% INCLUDE "$api_dir/dep_parser.tt" %]
     </div>
   </li>
   <li>
     <div id="tf" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-tf') %]<span class="right">POST <code>/tf</code></span></div>
 	<div class="collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/tf.tt' %]
+      [% INCLUDE "$api_dir/tf.tt" %]
     </div>
   </li>
   <li>
     <div id="stopwords" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-stopwords') %]<span class="right">GET <code>/stopwords</code></span></div>
 	<div class="collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/stopwords.tt' %]
-    </div>
-  </li>
-</ul>
-
-<h5 style="color: #607d8b; padding-top: 10px;">[% l('api-experimental') %]</h5>
-<ul class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-actants') %]<span class="right">POST <code>/actants</code></span></div>
-	<div class="collapsible-body" style="padding: 14px 40px;">
-      [% INCLUDE 'api/actants.tt' %]
+      [% INCLUDE "$api_dir/stopwords.tt" %]
     </div>
   </li>
 </ul>
 
 [% IF 0 %]
-<div class="card blue-grey darken-1">
-  <div class="card-content white-text">
-    <span class="card-title">Parsing</span>
-    <p>Todo</p>
-  </div>
-  <div class="card-action">
-    <a href="#">API</a>
-  </div>
-</div>
+  <h5 style="color: #607d8b; padding-top: 10px;">[% l('api-experimental') %]</h5>
+  <ul class="collapsible" data-collapsible="accordion">
+  </ul>
 [% END %]

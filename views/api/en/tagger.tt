@@ -1,28 +1,28 @@
 <p class="light" style="padding: 0px; margin: 0px;">
 The process of marking up a word in a text as corresponding to a particular part of speech, based on both lexical analysis and context.</p>
-<h5>Requests</h5>
+<h5>[% l('requests') %]</h5>
 <pre>POST http://api.pln.pt/tagger</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
-Send the text to be tokenized as the body of the request.
+Send the text to be processed as the body of the request.
 </p>
-<h5>Result</h5>
+<h5>[% l('result') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-The result operation is a list in JSON format where each element of the list is a token.
+The result is a list, in JSON format, where for each word in the text the PoS tag is available, including the corresponding probability.
 </p>
-<h5>Example</h5>
+<h5>[% l('example') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
 For example, given the following input text:
 </p>
 <pre class="myc">$ cat input.txt
-This is a sample input text.</pre>
+A Maria tem razão.</pre>
 <p class="light" style="padding: 0px; margin: 0px;">
-You can make a request to the API for tokenizing the text, for example:
+You can make a request to the API for tagging the text, for example:
 </p>
 <pre class="myc">$ curl -s -X POST -d @input.txt http://api.pln.pt/tagger
 [["A","o","DA0FS0","0.675415"],["Maria","maria","NP00000","1"],["tem","ter","VMIP3S0","0.999287"],["razão","razão","NCFS000","0.65"],[".",".","Fp","1"]]</pre>
-<h5>Options</h5>
+<h5>[% l('options') %]</h5>
 <p class="light" style="padding: 0px; margin: 0px;">
-<code>output=&lt;value&gt;</code><br>
+<code>output=json|raw</code><br>
      <code class="opt">json</code> (default) return the output as a JSON object<br>
      <code class="opt">raw</code> return the raw output from the toknizer instead of returning a json object
 </p>
