@@ -7,7 +7,7 @@
   <div class="footer-copyright">
 	<div class="container">
       <div class="row">
-        <div class="col m6">&copy; 2016-2017 [% l('copyright') %]</div>
+        <div class="col m6">&copy; 2016-2018 [% l('copyright') %]</div>
         <div class="col m6 right-align"><em>Powered by <a class="orange-text text-lighten-1" href="http://perldancer.org">Dancer</a> and <a class="orange-text text-lighten-1" href="http://materializecss.com">Materialize</a></em></div>
 	</div>
   </div>
