@@ -1,0 +1,24 @@
+<p class="light" style="padding: 0px; margin: 0px;">
+Query the <a href="https://github.com/nunorc/qaptnet">qaptnet</a> question-answering model.
+</p>
+<h5>[% l('requests') %]</h5>
+<pre>POST http://api.pln.pt/qaptnet</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+Send the context and the question as the body of the request in JSON format.
+</p>
+<h5>[% l('result') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+The result is the answer to the question, in JSON format.
+</p>
+<h5>[% l('example') %]</h5>
+<p class="light" style="padding: 0px; margin: 0px;">
+For example, given the following context and question text:
+</p>
+<pre class="myc">$ cat data.json 
+{"context": "Arquitetonicamente, a escola tem um caráter católico. No topo da cúpula de ouro do edifício principal é uma estátua de ouro da Virgem Maria. Imediatamente em frente ao edifício principal e de frente para ele, é uma estátua de cobre de Cristo com os braços erguidos com a lenda &quot;Venite Ad Me Omnes&quot;. Ao lado do edifício principal é a Basílica do Sagrado Coração. Imediatamente atrás da basílica é a Gruta, um lugar mariano de oração e reflexão. É uma réplica da gruta em Lourdes, na França, onde a Virgem Maria supostamente apareceu a Santa Bernadette Soubirous em 1858. No final da unidade principal (e em uma linha direta que liga através de 3 estátuas e da Cúpula de Ouro), é um estátua de pedra simples e moderna de Maria.", "question": "A quem a Virgem Maria supostamente apareceu em 1858 em Lourdes, na França?"}
+</pre>
+<p class="light" style="padding: 0px; margin: 0px;">
+You can make a request to the API to predict the answer, for example:
+</p>
+<pre class="myc">$ curl -H "Content-Type: application/json" --data @data.json http://api.pln.pt/qaptnet
+{"answer":"Santa Bernadette Soubirous"}</pre>

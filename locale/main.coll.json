@@ -83,6 +83,10 @@
 	"pt": "<em>Stop Words</em>",
 	"en": "Stop Words"
   },
+  "api-qaptnet": {
+  "pt": "qaptnet",
+  "en": "qaptnet"
+  },
   "api-actants": {
 	"pt": "Actantes de Verbos",
 	"en": "Verbs Actants"

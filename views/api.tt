@@ -44,6 +44,12 @@
       [% INCLUDE "$api_dir/stopwords.tt" %]
     </div>
   </li>
+  <li>
+    <div id="qaptnet" class="collapsible-header blue-grey white-text"><i class="material-icons">code</i>[% l('api-qaptnet') %]<span class="right">POST <code>/qaptnet</code></span></div>
+  <div class="collapsible-body" style="padding: 14px 40px;">
+      [% INCLUDE "$api_dir/qaptnet.tt" %]
+    </div>
+  </li>
 </ul>
 
 [% IF 0 %]
